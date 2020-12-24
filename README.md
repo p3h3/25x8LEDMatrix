@@ -1,6 +1,7 @@
 # 25x8LEDMatrix
 Hopefully a rather pleasant Christmas gift.
 
+
 ###Setup
 To upload any custom pictures to the Matrix, you have to use the 
 Arduino IDE. Please download that first.
