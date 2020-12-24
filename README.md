@@ -2,7 +2,7 @@
 Hopefully a rather pleasant Christmas gift.
 
 
-###Setup
+### Setup
 To upload any custom pictures to the Matrix, you have to use the 
 Arduino IDE. Please download that first.
 
@@ -25,7 +25,7 @@ Tools -> Board -> ATmega328PB -> ATmega328PB Internal Clock.
 Now set the Speed to 8Mhz and you're done!
 
 
-###Usage
+### Usage
 Use the editor/index.html for guidance on how to use the editor.
 
 When done animating a series of pictures or one lonely sad picture,
@@ -37,7 +37,7 @@ have pasted into pictures.h, otherwise it won't compile!)
 Lastly plug in the matrix and upload the code!
 
 
-###Uploading
+### Uploading
 If you've done the setup, you should be well prepared.
 But even if you are very sure you set everything correctly, double
 check it since **it might brick the board if you upload code that
