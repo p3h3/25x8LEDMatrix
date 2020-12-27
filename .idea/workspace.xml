@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12df8a2e-4e3e-46a8-aece-b9878c23b3bd" name="Default Changelist" comment="formatting">
+    <list default="true" id="12df8a2e-4e3e-46a8-aece-b9878c23b3bd" name="Default Changelist" comment="new pictures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.ino" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/pictures.h" beforeDir="false" afterPath="$PROJECT_DIR$/main/pictures.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/sketch.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608829407434</updated>
       <workItem from="1608829408734" duration="1901000" />
-      <workItem from="1608901900975" duration="432000" />
+      <workItem from="1608901900975" duration="910000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit (already working)">
       <created>1608829482694</created>
@@ -91,7 +90,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608830730874</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated sketch">
+      <created>1609094516171</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609094516171</updated>
+    </task>
+    <task id="LOCAL-00006" summary="new pictures">
+      <created>1609094533109</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609094533109</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,12 +127,14 @@
     <MESSAGE value="initial commit (already working)" />
     <MESSAGE value="new readme!" />
     <MESSAGE value="formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="formatting" />
+    <MESSAGE value="updated sketch" />
+    <MESSAGE value="new pictures" />
+    <option name="LAST_COMMIT_MESSAGE" value="new pictures" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="247" key="Vcs.Push.Dialog.v2" timestamp="1608830732234">
+    <state x="446" y="247" key="Vcs.Push.Dialog.v2" timestamp="1609094588392">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="446" y="247" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1608830732234" />
+    <state x="446" y="247" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1609094588392" />
   </component>
 </project>

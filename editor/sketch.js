@@ -8,7 +8,7 @@ function setup() {
     frameRate(30);
     createCanvas(25, 8);
 
-    pixels = Array(25)
+    pixels = Array(25);
     for (var i = 0; i < pixels.length; i++) {
         pixels[i] = Array(8).fill(false);
     }
@@ -60,14 +60,16 @@ function convertToCode(array){
     tempCodeString = "PROGMEM const byte pic" + picNumber + "[] = { </br>";
     array.forEach((byte) => {
         tempCodeString += "  0b";
-       byte.forEach((bit) => {
-           // Note: outputs on board are inverted
-           if(bit) {
-               tempCodeString += "0";
-           }else{
-               tempCodeString += "1";
-           }
-       });
+        for(var i = 0; i < 8; i++) {
+            let bit = byte[i];
+            // Note: outputs on board are inverted
+            if (bit) {
+                tempCodeString += "0";
+            }
+            if (!bit) {
+                tempCodeString += "1";
+            }
+        }
         tempCodeString += ",</br>";
     });
     tempCodeString += "}; </br>";
