@@ -53,7 +53,7 @@ void setup() {
 
 
 //counter threshold
-short ct = 150;
+short ct = 5;
 
 //counter for changing frames
 short c = ct+1; // to make it work instantly
@@ -70,47 +70,123 @@ void loop() {
       default:
         fc = 1;
       case 1:
-        memcpy_P(pic, pic1, sizeof(pic));
+        memcpy_P(pic, pic0, sizeof(pic));
         break;
       case 2:
-        memcpy_P(pic, pic2, sizeof(pic));
+        memcpy_P(pic, pic1, sizeof(pic));
         break;
       case 3:
-        memcpy_P(pic, pic3, sizeof(pic));
+        memcpy_P(pic, pic2, sizeof(pic));
         break;
       case 4:
-        memcpy_P(pic, pic4, sizeof(pic));
+        memcpy_P(pic, pic3, sizeof(pic));
         break;
       case 5:
-        memcpy_P(pic, pic5, sizeof(pic));
+        memcpy_P(pic, pic4, sizeof(pic));
         break;
       case 6:
-        memcpy_P(pic, pic6, sizeof(pic));
+        memcpy_P(pic, pic5, sizeof(pic));
         break;
       case 7:
-        memcpy_P(pic, pic7, sizeof(pic));
-        break;/*
+        memcpy_P(pic, pic6, sizeof(pic));
+        break;
       case 8:
-        memcpy_P(pic, pic8, sizeof(pic));
-        break;/*
+        memcpy_P(pic, pic7, sizeof(pic));
+        break;
       case 9:
-        memcpy_P(pic, pic9, sizeof(pic));
+        memcpy_P(pic, pic8, sizeof(pic));
         break;
       case 10:
-        memcpy_P(pic, pic10, sizeof(pic));
-        break;
-      /*case 10:
-        memcpy_P(pic, pic11, sizeof(pic));
+        memcpy_P(pic, pic9, sizeof(pic));
         break;
       case 11:
-        memcpy_P(pic, pic12, sizeof(pic));
+        memcpy_P(pic, pic10, sizeof(pic));
         break;
       case 12:
-        memcpy_P(pic, pic13, sizeof(pic));
+        memcpy_P(pic, pic11, sizeof(pic));
         break;
       case 13:
+        memcpy_P(pic, pic12, sizeof(pic));
+        break;
+      case 14:
+        memcpy_P(pic, pic13, sizeof(pic));
+        break;
+      case 15:
         memcpy_P(pic, pic14, sizeof(pic));
+        break;
+      case 16:
+        memcpy_P(pic, pic15, sizeof(pic));
+        break;
+      case 17:
+        memcpy_P(pic, pic16, sizeof(pic));
+        break;
+      case 18:
+        memcpy_P(pic, pic17, sizeof(pic));
+        break;
+      case 19:
+        memcpy_P(pic, pic18, sizeof(pic));
+        break;
+      case 20:
+        memcpy_P(pic, pic19, sizeof(pic));
+        break;
+      case 21:
+        memcpy_P(pic, pic20, sizeof(pic));
+        break;
+      case 22:
+        memcpy_P(pic, pic21, sizeof(pic));
+        break;
+      case 23:
+        memcpy_P(pic, pic22, sizeof(pic));
+        break;
+      case 24:
+        memcpy_P(pic, pic23, sizeof(pic));
+        break;
+      case 25:
+        memcpy_P(pic, pic24, sizeof(pic));
+        break;
+      case 26:
+        memcpy_P(pic, pic25, sizeof(pic));
+        break;
+      case 27:
+        memcpy_P(pic, pic26, sizeof(pic));
+        break;
+      case 28:
+        memcpy_P(pic, pic27, sizeof(pic));
+        break;
+      case 29:
+        memcpy_P(pic, pic28, sizeof(pic));
+        break;
+      case 30:
+        memcpy_P(pic, pic29, sizeof(pic));
+        break;
+      case 31:
+        memcpy_P(pic, pic30, sizeof(pic));
+        break;
+      case 32:
+        memcpy_P(pic, pic31, sizeof(pic));
+        break;
+      case 33:
+        memcpy_P(pic, pic32, sizeof(pic));
+        break;
+      case 34:
+        memcpy_P(pic, pic33, sizeof(pic));
+        break;
+      case 35:
+        memcpy_P(pic, pic34, sizeof(pic));
+        break;
+      case 36:
+        memcpy_P(pic, pic35, sizeof(pic));
+        break;
+      case 37:
+        memcpy_P(pic, pic36, sizeof(pic));
+        break;
+      case 38:
+        memcpy_P(pic, pic37, sizeof(pic));
+        break;
+      /*case 39:
+        memcpy_P(pic, pic38, sizeof(pic));
         break;*/
+        
     }
     //switch to next frame
     fc ++;
