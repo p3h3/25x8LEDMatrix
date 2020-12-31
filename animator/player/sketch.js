@@ -1,7 +1,4 @@
 var pixels;
-var copy_mode = false;
-var codeString = "";
-var tempCodeString = "";
 var picNumber = 0;
 var q = "";
 
@@ -67,25 +64,4 @@ function draw() {
             }
         }
     }
-}
-
-function convertToCode(array){
-    tempCodeString = "PROGMEM const byte pic" + picNumber + "[] = { </br>";
-    array.forEach((byte) => {
-        tempCodeString += "  0b";
-        for(var i = 0; i < 8; i++) {
-            let bit = byte[i];
-            // Note: outputs on board are inverted
-            if (bit) {
-                tempCodeString += "0";
-            }
-            if (!bit) {
-                tempCodeString += "1";
-            }
-        }
-        tempCodeString += ",</br>";
-    });
-    tempCodeString += "}; </br>";
-
-    document.getElementById("code").innerHTML = codeString + tempCodeString;
 }
