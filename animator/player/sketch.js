@@ -47,11 +47,7 @@ function draw() {
         for (let i = 0; i < 25; i++) {
             let x = s.split("0b")[i];
             for (let j = 0; j < 8; j++) {
-                if (x.charAt(j) === "0") {
-                    pixels[i][j] = true;
-                } else {
-                    pixels[i][j] = false;
-                }
+                pixels[i][j] = x.charAt(j) === "0";
 
             }
         }

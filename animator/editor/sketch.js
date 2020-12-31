@@ -1,15 +1,15 @@
-var pixels;
-var copy_mode = false;
-var codeString = "";
-var tempCodeString = "";
-var picNumber = 0;
+let pixels;
+let copyMode = false;
+let codeString = "";
+let tempCodeString = "";
+let picNumber = 0;
 
 function setup() {
     frameRate(30);
     createCanvas(25, 8);
 
     pixels = Array(25);
-    for (var i = 0; i < pixels.length; i++) {
+    for (let i = 0; i < pixels.length; i++) {
         pixels[i] = Array(8).fill(false);
     }
 }
@@ -24,7 +24,7 @@ function draw() {
 
     for(var i = 0; i < 25; i++){
         for(var j = 0; j < 8; j++){
-            if(pixels[i][j] == true){
+            if(pixels[i][j] === true){
                 point(i,j);
             }
         }
@@ -32,7 +32,7 @@ function draw() {
 }
 
 function mouseClicked() {
-    if(!copy_mode) {
+    if(!copyMode) {
         let x = Math.floor(mouseX);
         let y = Math.floor(mouseY);
         let val = pixels[x][y];
@@ -46,10 +46,10 @@ function mouseClicked() {
 }
 
 function keyPressed(){
-    if(keyCode == "c"){
+    if(keyCode === "c"){
         copyMode = !copyMode;
     }
-    if(keyCode = "n"){
+    if(keyCode === "n"){
         codeString += tempCodeString;
         tempCodeString = "";
         picNumber += 1;
@@ -60,7 +60,7 @@ function convertToCode(array){
     tempCodeString = "PROGMEM const byte pic" + picNumber + "[] = { </br>";
     array.forEach((byte) => {
         tempCodeString += "  0b";
-        for(var i = 0; i < 8; i++) {
+        for(let i = 0; i < 8; i++) {
             let bit = byte[i];
             // Note: outputs on board are inverted
             if (bit) {
