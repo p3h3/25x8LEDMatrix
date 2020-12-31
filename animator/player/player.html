@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25*8 LED Matrix Animation Player</title>
+</head>
+<style>
+    body {
+        width: 60vw;
+        margin: auto;
+    }
+    #textarea {
+        width: 60vw;
+        height: 30vw;
+    }
+    #defaultCanvas0 {
+        width: 60vw !important;
+        height: 19.2vw !important;
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+        margin: auto;
+    }
+</style>
+<script src="../p5.js"></script>
+<script src="sketch.js"></script>
+<body>
+
+<textarea id="textarea" onKeyUp="updateAnimation()">
+</textarea>
+
+<main>
+</main>
+
+</body>
+</html>
