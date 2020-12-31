@@ -53,7 +53,7 @@ void setup() {
 
 
 //counter threshold
-short ct = 5;
+short ct = 150;
 
 //counter for changing frames
 short c = ct+1; // to make it work instantly
@@ -86,7 +86,7 @@ void loop() {
         break;
       case 6:
         memcpy_P(pic, pic5, sizeof(pic));
-        break;
+        break;/*
       case 7:
         memcpy_P(pic, pic6, sizeof(pic));
         break;
