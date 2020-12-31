@@ -1,10 +1,10 @@
-var pixels;
-var picNumber = 0;
-var q = "";
+let pixels;
+let picNumber = 0;
+let q = "";
 
 let framerate = 1;
 
-var counter = 0;
+let counter = 0;
 
 function updateAnimation(){
     q = document.getElementById("textarea").value;
@@ -15,7 +15,7 @@ function setup() {
     createCanvas(25, 8);
 
     pixels = Array(25);
-    for (var i = 0; i < pixels.length; i++) {
+    for (let i = 0; i < pixels.length; i++) {
         pixels[i] = Array(8).fill(false);
     }
 }
@@ -44,10 +44,10 @@ function draw() {
 
         let s = q.split("PROGMEM const byte")[picNumber + 1].split("{")[1];
 
-        for (var i = 0; i < 25; i++) {
+        for (let i = 0; i < 25; i++) {
             let x = s.split("0b")[i];
-            for (var j = 0; j < 8; j++) {
-                if (x.charAt(j) == "0") {
+            for (let j = 0; j < 8; j++) {
+                if (x.charAt(j) === "0") {
                     pixels[i][j] = true;
                 } else {
                     pixels[i][j] = false;
@@ -57,9 +57,9 @@ function draw() {
         }
     }catch (x){}
 
-    for(var i = 0; i < 25; i++){
-        for(var j = 0; j < 8; j++){
-            if(pixels[i][j] == true){
+    for(let i = 0; i < 25; i++){
+        for(let j = 0; j < 8; j++){
+            if(pixels[i][j] === true){
                 point(i,j);
             }
         }
