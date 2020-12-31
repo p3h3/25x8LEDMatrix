@@ -15,24 +15,24 @@ function setup() {
 }
 
 function draw() {
-    fill(100,100,100);
+    fill(100, 100, 100);
     noStroke();
     rect(0, 0, 25, 8);
 
     stroke(127, 10, 10);
     strokeWeight(1);
 
-    for(var i = 0; i < 25; i++){
-        for(var j = 0; j < 8; j++){
-            if(pixels[i][j] === true){
-                point(i,j);
+    for (var i = 0; i < 25; i++) {
+        for (var j = 0; j < 8; j++) {
+            if (pixels[i][j] === true) {
+                point(i, j);
             }
         }
     }
 }
 
 function mouseClicked() {
-    if(!copyMode) {
+    if (!copyMode) {
         let x = Math.floor(mouseX);
         let y = Math.floor(mouseY);
         let val = pixels[x][y];
@@ -45,22 +45,22 @@ function mouseClicked() {
     return false;
 }
 
-function keyPressed(){
-    if(keyCode === "c"){
+function keyPressed() {
+    if (keyCode === "c") {
         copyMode = !copyMode;
     }
-    if(keyCode === "n"){
+    if (keyCode === "n") {
         codeString += tempCodeString;
         tempCodeString = "";
         picNumber += 1;
     }
 }
 
-function convertToCode(array){
+function convertToCode(array) {
     tempCodeString = "PROGMEM const byte pic" + picNumber + "[] = { </br>";
     array.forEach((byte) => {
         tempCodeString += "  0b";
-        for(let i = 0; i < 8; i++) {
+        for (let i = 0; i < 8; i++) {
             let bit = byte[i];
             // Note: outputs on board are inverted
             if (bit) {

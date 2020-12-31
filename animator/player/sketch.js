@@ -6,7 +6,7 @@ let framerate = 1;
 
 let counter = 0;
 
-function updateAnimation(){
+function updateAnimation() {
     q = document.getElementById("textarea").value;
 }
 
@@ -21,7 +21,7 @@ function setup() {
 }
 
 function draw() {
-    fill(100,100,100);
+    fill(100, 100, 100);
     noStroke();
     rect(0, 0, 25, 8);
 
@@ -33,10 +33,10 @@ function draw() {
     try {
         let maxPicNumber = q.split("PROGMEM const byte").length - 1;
 
-        if(counter > (30 / framerate)) {
+        if (counter > (30 / framerate)) {
             counter = 0;
             picNumber++;
-            if(picNumber >= maxPicNumber){
+            if (picNumber >= maxPicNumber) {
                 picNumber = 0;
             }
             console.log(picNumber);
@@ -48,15 +48,15 @@ function draw() {
             let x = s.split("0b")[i];
             for (let j = 0; j < 8; j++) {
                 pixels[i][j] = x.charAt(j) === "0";
-
             }
         }
-    }catch (x){}
+    } catch (x) {
+    }
 
-    for(let i = 0; i < 25; i++){
-        for(let j = 0; j < 8; j++){
-            if(pixels[i][j] === true){
-                point(i,j);
+    for (let i = 0; i < 25; i++) {
+        for (let j = 0; j < 8; j++) {
+            if (pixels[i][j] === true) {
+                point(i, j);
             }
         }
     }
