@@ -46,13 +46,20 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-    if (keyCode === "c") {
+    console.log(keyCode);
+    if (keyCode === 67) { // key code for key "c"
         copyMode = !copyMode;
     }
-    if (keyCode === "n") {
+    if (keyCode === 78) { // key code for key "n"
         codeString += tempCodeString;
         tempCodeString = "";
         picNumber += 1;
+    }
+    if (keyCode === 80) { // key code for key "p"
+        console.log("lol");
+        window.location.href =
+            window.location.href.split("animator/editor/editor.html")[0] + "animator/player/player.html?c="
+            + codeString + tempCodeString;
     }
 }
 

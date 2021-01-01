@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +8,13 @@
     body {
         width: 60vw;
         margin: auto;
+        margin-top: 0;
     }
+
     #textarea {
         width: 60vw;
-        height: 30vw;
     }
+
     #defaultCanvas0 {
         width: 60vw !important;
         height: 19.2vw !important;
@@ -22,16 +23,42 @@
         image-rendering: crisp-edges;
         margin: auto;
     }
+
+    .leftmargin {
+        margin-left: 2%;
+    }
 </style>
 <script src="../p5.js"></script>
 <script src="sketch.js"></script>
-<body>
-
-<textarea id="textarea" onKeyUp="updateAnimation()">
-</textarea>
+<br>
 
 <main>
 </main>
+
+<div id="controls">
+
+    <a id="currentPicture">Current Picture: </a>
+    <button id="runningButton" onclick="toggleRunning()" class="leftmargin">Stop Animation</button>
+    <button id="editFrameButton" onclick="editCurrentFrame()" class="leftmargin">Edit this Frame</button>
+
+    </br>
+
+    <a>Animation Speed:</a>
+    <a id="frameRateLabel">1 fps</a>
+
+    </br>
+
+    <a>0.2</a>
+    <input type="range"
+           min="0.2" max="10" , value="1" step="0.2" id="frameRateRange" oninput="updateFramerate()">
+    <a>10</a>
+
+</div>
+
+</br>
+
+<textarea id="textarea" onKeyUp="updateAnimation()">
+</textarea>
 
 </body>
 </html>
