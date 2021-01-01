@@ -14,28 +14,28 @@ function updateAnimation() {
     q = document.getElementById("textarea").value;
 }
 
-function updateFramerate(){
+function updateFramerate() {
     framerate = document.getElementById("frameRateRange").value;
     document.getElementById("frameRateLabel").innerText = framerate + "fps";
 }
 
-function toggleRunning(){
+function toggleRunning() {
     animationRunning = !animationRunning;
-    if(animationRunning){
+    if (animationRunning) {
         document.getElementById("runningButton").innerText = "Stop Animation";
-    }else{
+    } else {
         document.getElementById("runningButton").innerText = "Play Animation";
     }
 }
 
-function editCurrentFrame(){
+function editCurrentFrame() {
     // turn animation off and set text accordingly
     animationRunning = true;
     toggleRunning();
 
     window.location.href =
         window.location.href.replace("animator/player/player.html", "animator/editor/editor.html")
-            + "&pn=" + picNumber;
+        + "&pn=" + picNumber;
 }
 
 function setup() {
@@ -45,9 +45,9 @@ function setup() {
     // set text area height to fill screen
     document.getElementById("textarea").style =
         "height: " + (innerHeight
-            - document.getElementById("defaultCanvas0").offsetHeight
-            - document.getElementById("controls").offsetHeight
-            - innerHeight * 0.1)
+        - document.getElementById("defaultCanvas0").offsetHeight
+        - document.getElementById("controls").offsetHeight
+        - innerHeight * 0.1)
         + "px !important;";
 
     // get html param with code (from editor)
@@ -75,7 +75,7 @@ function draw() {
     strokeWeight(1);
 
     // only increase picture counter if animation is playing
-    if(animationRunning) {
+    if (animationRunning) {
         counter++;
     }
 
