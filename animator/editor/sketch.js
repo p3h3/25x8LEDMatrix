@@ -8,9 +8,35 @@ function setup() {
     frameRate(30);
     createCanvas(25, 8);
 
+    // initialise empty pixels array
     pixels = Array(25);
     for (let i = 0; i < pixels.length; i++) {
         pixels[i] = Array(8).fill(false);
+    }
+
+    // check if there are params
+    if(window.location.href.split("pn=").length > 1){
+        // get html param with code (from player)
+        let pn = parseInt(window.location.href.split("pn=")[1].split("&")[0]);
+        let q = window.location.href.split("c=")[1].split("&")[0]
+            .replaceAll("%20", " ")
+            .replaceAll("%3C/br%3E", "\n");
+
+        // insert param code into output
+        tempCodeString = window.location.href.split("c=")[1].split("&")[0]
+            .replaceAll("%20", " ")
+            .replaceAll("%3C/br%3E", "</br>");
+        document.getElementById("code").innerHTML = codeString + tempCodeString;
+
+        let s = q.split("PROGMEM const byte")[pn + 1];
+
+        // insert pixel data from param
+        for (let i = 0; i < 25; i++) {
+            let x = s.split("0b")[i + 1];
+            for (let j = 0; j < 8; j++) {
+                pixels[i][j] = x.charAt(j) === "0";
+            }
+        }
     }
 }
 
@@ -46,7 +72,6 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-    console.log(keyCode);
     if (keyCode === 67) { // key code for key "c"
         copyMode = !copyMode;
     }
@@ -56,10 +81,34 @@ function keyPressed() {
         picNumber += 1;
     }
     if (keyCode === 80) { // key code for key "p"
-        console.log("lol");
-        window.location.href =
-            window.location.href.split("animator/editor/editor.html")[0] + "animator/player/player.html?c="
-            + codeString + tempCodeString;
+        // check if editor was started with params
+        if(window.location.href.split("pn=").length > 1){
+            let pn = parseInt(window.location.href.split("pn=")[1].split("&")[0]);
+            let q = window.location.href.split("c=")[1].split("&")[0]
+                .replaceAll("%20", " ")
+                .replaceAll("%3C/br%3E", "\n");
+
+            let before = "PROGMEM const byte" + q.split("PROGMEM const byte")[pn];
+            // replacing all duplicates
+            before = before.replaceAll("PROGMEM const bytePROGMEM const byte", "PROGMEM const byte");
+
+            let after = q.split("PROGMEM const byte")[pn+1].split("PROGMEM const byte")[1];
+            if(after === undefined){
+                after = "";
+            }
+
+            let combinedCode = (before + codeString + tempCodeString + after)
+                .replaceAll("</br>", "\n");
+
+            window.location.href =
+                window.location.href.split("animator/editor/editor.html")[0] + "animator/player/player.html?c="
+                + combinedCode;
+
+        }else {
+            window.location.href =
+                window.location.href.split("animator/editor/editor.html")[0] + "animator/player/player.html?c="
+                + codeString + tempCodeString;
+        }
     }
 }
 

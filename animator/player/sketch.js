@@ -33,7 +33,9 @@ function editCurrentFrame(){
     animationRunning = true;
     toggleRunning();
 
-
+    window.location.href =
+        window.location.href.replace("animator/player/player.html", "animator/editor/editor.html")
+            + "&pn=" + picNumber;
 }
 
 function setup() {
@@ -101,7 +103,7 @@ function draw() {
         }
     } catch (x) {
         document.getElementById("currentPicture").innerText =
-            "Current Picture: " + picNumber + "/" + maxPicNumber + " ERROR WHILE INTERPRETING TO PIXEL DATA!";
+            "Current Picture: " + picNumber + " ERROR WHILE INTERPRETING TO PIXEL DATA!";
     }
 
     // drawing pixels onto grid
